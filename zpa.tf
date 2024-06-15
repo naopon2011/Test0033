@@ -75,7 +75,7 @@ resource "zpa_application_segment" "target" {
   tcp_port_ranges   = ["3389", "3389"]
   udp_port_ranges   = ["3389", "3389"]
   domain_names     = ["target.internal.cloudapp.net"]
-  segment_group_id = zpa_segment_group.test_client_app_group.id
+  segment_group_id = zpa_segment_group.target_app_group.id
   server_groups {
     id = [zpa_server_group.azure.id]
   }
@@ -117,7 +117,7 @@ resource "zpa_policy_access_rule" "access_policy_for_test_client" {
       name =  "Example"
       object_type = "APP_GROUP"
       lhs = "id"
-      rhs = zpa_segment_group.test_client_app_group.id
+      rhs = zpa_segment_group.target_app_group.id
     }
   }
 }
