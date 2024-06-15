@@ -95,7 +95,7 @@ resource "zpa_server_group" "azure" {
 
 # Azure上のWindows10向けセグメントグループの作成
 # Create Segment Group for target application(Windows 10) which is created on Azure
-resource "zpa_segment_group" "test_client_app_group" {
+resource "zpa_segment_group" "target_app_group" {
   name            = "Target App group created by terraform"
   description     = "Target App group created by terraform"
   enabled         = true
